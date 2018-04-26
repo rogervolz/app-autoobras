@@ -1,5 +1,5 @@
 <template>
-       <v-flex d-flex xs12 sm6 md6 pa-1>
+       <v-flex>
         <v-card dark color="diario">
           <v-card-text class="px-0"> DIARIO</v-card-text>
         </v-card>

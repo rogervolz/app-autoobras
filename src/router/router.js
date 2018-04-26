@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Home from '@/components/Home.vue'
 import Header from "@/components/Toolbar/Header.vue"
 import Footer from "@/components/Toolbar/Footer.vue"
+import RadioPeao from "@/components/RadioPeao/RadioPeao.vue";
+import Creator from "@/components/RadioPeao/CreateTask/RPCreator.vue";
 import SignIn from "../components/User/SignIn.vue"
 import SignUp from "../components/User/SignUp.vue"
 import AuthGuard from "./auth-guard"
-
 
 const User = resolve => {
   //só carrega o componente se ele for solicitado
@@ -57,11 +58,11 @@ export default new Router({
       name: "Capa",
       component: Capa
     },
-    /*{
+    {
       path: "/app",
       name: "Capa",
       component: Capa
-    },*/
+    },
     {
       path: "/signin",
       name: "SignIn",
@@ -72,7 +73,16 @@ export default new Router({
       name: "SignUp",
       component: SignUp
     },
-
+    {
+      path: "/radioPeao",
+      name: "Radio-Peao",
+      component: RadioPeao
+    },
+    {
+      path: "/criadorObra",
+      name: "Creator",
+      component: Creator
+    },
     {
       path: "/user",
       component: User,

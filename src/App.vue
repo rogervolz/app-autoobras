@@ -1,6 +1,6 @@
 <template>
   <v-app app>
-    <v-container>
+    <v-container fluid>
       <v-layout row wrap>
         <v-container grid-list-xs>
             <app-header></app-header>
@@ -12,8 +12,14 @@
               </transition>
          </v-content>
 
+
         <v-container grid-list-xs>
-            <app-footer></app-footer>
+          <v-flex xs12>
+              <app-bottom-nav></app-bottom-nav>
+          </v-flex>
+          <!-- <v-flex xs12>
+              <app-footer></app-footer>
+          </v-flex> -->
         </v-container>
       </v-layout>
     </v-container>

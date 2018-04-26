@@ -1,7 +1,24 @@
 <template>
-       <v-flex d-flex xs12 sm6 md6 pa-1>
-        <v-card dark color="agenda">
-          <v-card-text class="px-0"> Agenda</v-card-text>
-        </v-card>
-      </v-flex>
+        <div id="components-demo">
+          <button-counter></button-counter>
+        </div>
 </template>
+
+<script>
+import Vue from 'vue'
+
+  Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+
+  export default {
+
+  }
+</script>
+
+

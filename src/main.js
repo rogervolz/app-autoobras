@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import router from './router/router.js'
+
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import * as firebase from "firebase"
@@ -12,12 +13,16 @@ import DateFilter from "./filters/date"
 
 import Header from "@/components/Toolbar/Header.vue"
 import Footer from "@/components/Toolbar/Footer.vue"
-import RadioPeao from "@/components/Radio-peao/Radio-peao.vue";
-import Agenda from "@/components/Agenda/Agenda.vue";
-import Diario from "@/components/Diario/Diario.vue";
-import Financeiro from "@/components/Financeiro/Financeiro.vue";
+import RadioPeaoCard from "@/components/RadioPeao/RadioPeaoCard.vue"
+import RPCreator from "@/components/RadioPeao/CreateTask/RPCreator.vue"
+import Agenda from "@/components/Agenda/Agenda.vue"
+import Diario from "@/components/Diario/Diario.vue"
+import Financeiro from "@/components/Financeiro/Financeiro.vue"
+import BottomNav from "@/components/Toolbar/BottomNav.vue"
+import Camera from "@/components/Camera/Camera.vue"
+import Style from './CSS/style.css'
 
-import colors from "../node_modules/vuetify/es5/util/colors";
+import colors from "../node_modules/vuetify/es5/util/colors"
 
 Vue.use(Vuetify, {
   theme: {
@@ -40,10 +45,13 @@ Vue.config.productionTip = false
 // Vue.filter("dateFilter", DateFilter);
 Vue.component("app-header", Header);
 Vue.component("app-footer", Footer);
-Vue.component("app-radio-peao", RadioPeao);
+Vue.component("app-radio-peao-card", RadioPeaoCard);
 Vue.component("app-agenda", Agenda);
 Vue.component("app-diario", Diario);
 Vue.component("app-financeiro", Financeiro);
+Vue.component("app-bottom-nav", BottomNav);
+Vue.component("app-camera", Camera);
+Vue.component("app-creator", RPCreator);
 
 /* eslint-disable no-new */
 new Vue({
@@ -69,3 +77,5 @@ new Vue({
     //this.$store.dispatch('loadMeetups')
   }
 })
+
+

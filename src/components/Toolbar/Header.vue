@@ -33,16 +33,6 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-          flat
-          v-for="item in menuItems"
-          :key="item.title"
-          :to="item.link">
-            <v-icon left >{{item.icon}}</v-icon>
-                {{item.title}}
-          </v-btn>
-
           <v-btn
             flat
             class="caption"
@@ -105,11 +95,12 @@
 
     </v-navigation-drawer>
     <!-- ==========================================  botão direito ============ -->
-
     </v-container>
 </template>
 
 <script>
+import {NavBarIcons} from './NavBarIcons.js'
+
 export default {
   data () {
     return {
@@ -122,24 +113,8 @@ export default {
       title: 'AutoObras'
     }
   },
+    mixins: [NavBarIcons],
    computed:{
-      menuItems () {
-        var menuItems= []
-        if(this.userIsAuthenticated ) {
-                  console.log('Header.vue - user EXISTE', this.$store.getters.user)
-          menuItems=[
-          {icon: 'dashboard', title: 'App', link:'/app'},
-          {icon: 'person', title: 'Perfil', link:'/profile'}
-          ]
-        } else{
-                  console.log('Header.vue - user NÃO existe', this.$store.getters.user)
-          menuItems= [
-          {icon: 'assignment_ind', title: 'Inscreva-se', link:'/signup'},
-          {icon: 'lock_open', title: 'Entrar', link:'/signin'}
-        ]
-        }
-        return menuItems
-      },
        userIsAuthenticated () {
          console.log('Header.vue - user is Authenticated', this.$store.getters.user)
          return this.$store.getters.user !== null && this.$store.getters.user !== undefined

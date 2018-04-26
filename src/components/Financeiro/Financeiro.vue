@@ -1,7 +1,7 @@
 <template>
-       <v-flex d-flex xs12 sm6 md6 pa-1>
+       <v-flex>
         <v-card dark color="financeiro">
-          <v-card-text class="px-0"> FINANCEIRO </v-card-text>
+          <v-card-text class="px-0"> FINANCEIRO</v-card-text>
         </v-card>
       </v-flex>
 </template>
